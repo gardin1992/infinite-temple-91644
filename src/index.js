@@ -1,15 +1,26 @@
 import React from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
-//
-import App from './containers/App'
-import configureStore from './stores/index';
+import {ConnectedRouter} from 'react-router-redux'
 
-const store = configureStore({});
+//
+import 'material-components-web/dist/material-components-web.css';
+import './demo.css';
+
+import App from './containers/App';
+
+import configureStore, {history} from './stores/index';
+
+const store = configureStore({app: {initialized: true}});
+
 
 render(
     <Provider store={store}>
-        <App title="Heroku Deploy"/>
+        <ConnectedRouter history={history}>
+
+            <App />
+
+        </ConnectedRouter>
     </Provider>,
 
     document.getElementById('root')

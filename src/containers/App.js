@@ -1,43 +1,87 @@
 import React, {Component} from 'react'
-
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux'
+import {MDCTemporaryDrawer} from '@material/drawer';
+import {Route} from 'react-router'
+//
+import {BarFooter, BarHeader, BarAside} from '../components/app/index';
+//
+import Home from './Home';
+import DataScience from './DataSciente';
 
 class App extends Component {
 
     render() {
 
-        const {app, actions} = this.props;
-
-        console.log(this.props);
-
         return (
-            <div>
+            <div style={{minWidth: "320px"}}>
 
-                <input hidden={app.blog ? "true" : "false"} role="search" type="text" placeholder="Procurar no Blog" />
-                <input type="button" value={"Ativar blog"} onClick={actions.post}/>
+                <BarHeader />
 
-                <h1>{this.props.title}</h1>
+                <BarAside />
 
-                <p>PARAGRAFO PARA TESTE</p>
+                <main className="demo-main mdc-toolbar-fixed-adjust">
+                    <h1 className="mdc-typography--display1">Gardin1992</h1>
+                    <p className="mdc-typography--body1">Click the menu icon above to open.</p>
+                    <h2 className="mdc-typography--display2">List Groups</h2>
 
-            </div>);
+                    <div className="mdc-layout-grid" style={{width: "90%", margin: "0 auto"}}>
+
+                            <Route exact path="/" component={Home}/>
+                            <Route exact path="/data-science" component={DataScience}/>
+                            {/*<Route exact path="/" component={Home}/>*/}
+                            {/*<Route exact path="/" component={Home}/>*/}
+
+                    </div>
+
+                    <section>
+
+                    </section>
+
+                </main>
+
+                <BarFooter />
+
+            </div>
+        )
+
+    }
+
+    componentDidMount() {
+
+        const drawerEl = document.querySelector('.mdc-temporary-drawer');
+        const drawer = new MDCTemporaryDrawer(drawerEl);
+
+        document.querySelector('.demo-menu').addEventListener('click', function () {
+            drawer.open = true;
+        });
+
+        drawerEl.addEventListener('MDCTemporaryDrawer:open', function () {
+            console.log('Received MDCTemporaryDrawer:open');
+        });
+
+        drawerEl.addEventListener('MDCTemporaryDrawer:close', function () {
+            console.log('Received MDCTemporaryDrawer:close');
+        });
 
     }
 
 }
 
-// const connectOptions = {
-//     doSubscribePropsSelector: props => props.nodeId,
-//     doSubscribe: (store,nodeId) => store.subscribeNode(nodeId)
-// };
+/**
+ *
+ <section className="mdc-layout-grid__cell">
+ <h3>Basic Usage</h3>
 
-const mapStateToProps = (state, ownProps) => ({
-    app: state.app
-});
+ <ContentListGroup listGroups={Object.values(listGroups)}/>
 
-function mapDispatchToProps(dispatch) {
-    return { actions: bindActionCreators({post: () => { return {type: "REQUEST_POSTS"}}}, dispatch) }
-}
+ </section>
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+ <section className="mdc-layout-grid__cell">
+ <h3>Basic Usage</h3>
+
+ <ContentListGroup listGroups={Object.values(listGroups)}/>
+
+ </section>
+ */
+
+export default App;
+

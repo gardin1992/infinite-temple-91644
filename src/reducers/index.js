@@ -1,10 +1,12 @@
 import {combineReducers} from 'redux'
+import {routerReducer} from 'react-router-redux'
 
 const app = (state = {initialized: false, blog: false}, action) => {
 
     switch (action.type) {
 
         case 'APP_INITIALIZED':
+            console.log(action);
             return state;
 
         default:
@@ -39,11 +41,13 @@ const blog = (state = {posts: {}, postsIds: []}, action) => {
 function lastAction(state = null, action) {
     return action;
 }
+
 const rootReducers = combineReducers({
     app,
+    lastAction,
     entities,
     blog,
-    lastAction
+    router: routerReducer
 });
 
 export default rootReducers;
