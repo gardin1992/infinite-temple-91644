@@ -3,7 +3,7 @@
   "homepage": "https://gardin1992.github.io/",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "author": "",
   "license": "MIT",
   "devDependencies": {

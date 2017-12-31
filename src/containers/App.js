@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {MDCTemporaryDrawer} from '@material/drawer';
+import * as drawerMDC from '@material/drawer/dist/mdc.drawer'
 import {Route} from 'react-router'
 //
 import {BarFooter, BarHeader, BarAside} from '../components/app/index';
@@ -48,7 +48,7 @@ class App extends Component {
     componentDidMount() {
 
         const drawerEl = document.querySelector('.mdc-temporary-drawer');
-        const drawer = new MDCTemporaryDrawer(drawerEl);
+        const drawer = new drawerMDC.MDCTemporaryDrawer(drawerEl);
 
         document.querySelector('.demo-menu').addEventListener('click', function () {
             drawer.open = true;
