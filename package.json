@@ -5,7 +5,6 @@
   "main": "index.js",
   "author": "",
   "license": "MIT",
-  "homepage": "http://gardin1992.github.io/my-site",
   "devDependencies": {
     "enzyme": "^2.8.2",
     "gh-pages": "^1.1.0",
