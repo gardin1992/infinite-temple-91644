@@ -2,12 +2,12 @@ import React, {Component} from 'react'
 
 class App extends Component {
 
-    render(title) {
+    render() {
 
         return (
             <div>
 
-                <h1>{{title}}</h1>
+                <h1>{this.props.title}</h1>
 
                 <p>PARAGRAFO PARA TESTE</p>
 
