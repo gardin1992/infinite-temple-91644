@@ -25,6 +25,7 @@
     "eject": "react-scripts eject",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "heroku": "git add . && git commit -m \"react app\" && git push -u heroku master"
   }
 }
