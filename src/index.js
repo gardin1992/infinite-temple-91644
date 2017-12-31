@@ -1,19 +1,8 @@
 import React, {Component} from 'react'
 import { render } from 'react-dom'
-
-
-class App extends Component {
-
-
-    render () {
-
-        return (<div><h1>Title</h1></div>);
-
-    }
-
-}
+import App from './containers/App'
 
 render(
-    <App />,
+    <App title="Heroku Deploy" />,
     document.getElementById('root')
 )
