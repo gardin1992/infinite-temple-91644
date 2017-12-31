@@ -1,6 +1,6 @@
 {
   "name": "my-site",
-  "homepage": "https://infinite-temple-91644.herokuapp.com/",
+  "homepage": "https://gardin1992.github.io/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "test": "react-scripts test",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -b master -d build",
     "heroku": "yarn run build && git add . && git commit -m \"react app\" && git push -u heroku master"
   }
 }
