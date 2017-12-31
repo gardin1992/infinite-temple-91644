@@ -1,5 +1,6 @@
 {
   "name": "my-site",
+  "homepage": "https://infinite-temple-91644.herokuapp.com/",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
